@@ -19,7 +19,7 @@
     </div>
   </div>
   <div id="messages" *ngFor="let chat of messageArray">
-    <div *ngIf="chat.userEmail==selectedUser.userEmail || chat.userEmail==currentUser.userEmail">
+    <div *ngIf="chat.userEmail==selectedUser.userEmail || chat.sendTo==selectedUser.userEmail">
       <p>---</p>
       <p>{{chat.content}}</p>
       <p>{{chat.userEmail}}</p>

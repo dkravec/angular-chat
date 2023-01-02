@@ -47,7 +47,6 @@ export class ChatComponent implements OnInit{
         this.messageArray.push(data);
         this.messageArray = [...this.messageArray];
         console.log(this.messageArray)
-
       })
   }
 
