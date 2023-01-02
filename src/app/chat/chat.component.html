@@ -1,0 +1,28 @@
+<div id='main'>
+  <div id="users">
+    <div *ngFor="let user of userList">
+      <p>User: {{user?.userEmail}}</p>
+      <button (click)="currentUserSelect(user.userEmail)">Current User Select</button>
+      <button (click)="selectSendTo(user.userEmail)">Send To</button>
+    </div>
+  </div>
+  <div id="chat">
+    <div id="sendMessage">
+      <input type="text"
+        placeholder="type a message"
+        [(ngModel)]="messageContent"
+        (keyup)="$event.keyCode===13 && sendMessage()"
+      />
+      <button (click)="sendMessage()">
+        Send
+      </button>
+    </div>
+  </div>
+  <div id="messages" *ngFor="let chat of messageArray">
+    <div *ngIf="chat.userEmail==selectedUser.userEmail || chat.userEmail==currentUser.userEmail">
+      <p>---</p>
+      <p>{{chat.content}}</p>
+      <p>{{chat.userEmail}}</p>
+    <!-- </div> -->
+  </div>
+</div>
